@@ -20,7 +20,6 @@ jobs:
           java-version: '11'
 
       - name: Build with Maven
-        working-directory: resume-api
         run: mvn clean package
 
       - name: Set up Google Cloud SDK
