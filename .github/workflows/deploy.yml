@@ -39,6 +39,6 @@ jobs:
             --region asia-south1 \
             --project precise-tube-429809-s4 \
             --memory 512MB \
-            --timeout 90 \
+            --timeout 90s \
             --min-instances 0 \
-            --max-instances 1 \	
+            --max-instances 1
