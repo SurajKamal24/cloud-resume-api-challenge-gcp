@@ -46,4 +46,5 @@ jobs:
             --timeout 90s \
             --min-instances 0 \
             --max-instances 1 \
-            --service-account firestore-poc@precise-tube-429809-s4.iam.gserviceaccount.com
+            --service-account firestore-poc@precise-tube-429809-s4.iam.gserviceaccount.com \
+            --gen2
