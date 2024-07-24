@@ -1,5 +1,4 @@
-package org.example;
-
+package demo;
 
 import com.google.api.core.ApiFuture;
 import com.google.cloud.firestore.DocumentSnapshot;
@@ -10,8 +9,8 @@ import com.google.cloud.functions.HttpRequest;
 import com.google.cloud.functions.HttpResponse;
 import java.util.logging.Logger;
 
-public class HelloHttpFunction implements HttpFunction {
-    private static final Logger logger = Logger.getLogger(HelloHttpFunction.class.getName());
+public class GetResumeData implements HttpFunction {
+    private static final Logger logger = Logger.getLogger(GetResumeData.class.getName());
     @Override
     public void service(HttpRequest httpRequest, HttpResponse httpResponse) throws Exception {
         Firestore service = FirestoreOptions.getDefaultInstance().getService();

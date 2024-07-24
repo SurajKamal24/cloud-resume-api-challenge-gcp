@@ -36,7 +36,7 @@ jobs:
       - name: Deploy to Cloud Functions
         run: |
           gcloud functions deploy resume-api \
-            --entry-point org.example.HelloHttpFunction \
+            --entry-point demo.GetResumeData \
             --runtime java11 \
             --trigger-http \
             --allow-unauthenticated \
