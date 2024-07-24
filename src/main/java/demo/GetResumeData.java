@@ -7,6 +7,8 @@ import com.google.cloud.firestore.FirestoreOptions;
 import com.google.cloud.functions.HttpFunction;
 import com.google.cloud.functions.HttpRequest;
 import com.google.cloud.functions.HttpResponse;
+
+import java.util.Map;
 import java.util.logging.Logger;
 
 public class GetResumeData implements HttpFunction {
@@ -18,7 +20,9 @@ public class GetResumeData implements HttpFunction {
             ApiFuture<DocumentSnapshot> resumes = service.collection("resumes").document("1").get();
             DocumentSnapshot documentSnapshot = resumes.get();
             if (documentSnapshot.exists()) {
-                httpResponse.getWriter().write(documentSnapshot.getData().toString());
+                Map<String, Object> data = documentSnapshot.getData();
+                httpResponse.setContentType("application/json");
+                httpResponse.getWriter().write(data.get("data").toString());
             } else {
                 httpResponse.getWriter().write("No such document!");
             }
