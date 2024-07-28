@@ -40,8 +40,8 @@ jobs:
             --runtime java11 \
             --trigger-http \
             --no-allow-unauthenticated \
-            --region ${{ secrets.GCP_REGION }} \
-            --project ${{ secrets.GCP_PROJECT_ID }} \
+            --region ${{ vars.GCP_REGION }} \
+            --project ${{ vars.GCP_PROJECT_ID }} \
             --memory 512MB \
             --timeout 90s \
             --min-instances 0 \
