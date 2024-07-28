@@ -23,3 +23,45 @@ This design leverages the power of Google Cloud Platform services to manage API 
 ### **Development & Deployment Process**:
    - **GitHub Repository**: Contains the source code for the cloud function and the GitHub Actions workflow.
    - **GitHub Actions**: Automatically deploys the cloud function whenever changes are pushed to the repository, ensuring a continuous integration and deployment pipeline.
+
+## Getting Started
+### **Prerequisites**:
+1. Google Cloud Platform account with billing enabled.
+2. `gcloud` CLI installed and configured with your GCP account.
+3. Apigee account for managing APIs (Optional) - You can use the Cloud Functions URL directly if you don't want to use Apigee.
+4. GitHub account for version control and CI/CD.
+### **Project Setup**:
+1. **Create a new project in GCP**.
+   - Open the GCP Console and navigate to the project selector.
+   - Click on `New Project` and enter a name for your project.
+   - Click on `Create` to create the project.
+   - Note down the Project ID, as you will need it later.
+   - Enable billing for the project.
+2. **Enable APIs**.
+   - Navigate to the `APIs & Services` section in the GCP Console.
+   - Click on `Enable APIs and Services`.
+   - Enable the following APIs:
+     - Cloud Functions API
+     - Cloud Run Admin API
+     - Firestore API
+     - Cloud Resource Manager API
+     - Apigee API (Optional)
+3. **Create Service Accounts**.
+    - Navigate to the `IAM & Admin` section in the GCP Console.
+    - Click on `Service Accounts` and create the following service accounts.
+        - `firestore-reader` for reading data from Firestore with following roles. To be used by the cloud function.
+            - `Cloud Datastore User`
+        - `github-actions` for deploying the cloud function using GitHub Actions.
+            - `Cloud Functions Admin, Cloud Run Admin, Service Account User`
+        - `apigee-proxy` for invoking the cloud function using Apigee (Optional).
+            - `Cloud Functions Invoker, Cloud Run Invoker`
+4. **Create a Firestore Database**.
+   - Navigate to the `Firestore` section in the GCP Console.
+   - Click on `Create Database`.
+   - Choose the `Native Mode` and click on `Next`.
+   - Select a location for your database and click on `Create`.
+5. **Load Data into Firestore**.
+   - Create a new collection in Firestore and add the resume data in JSON format.
+   - Refer schema in `resume.json` for the resume data structure.
+### **How to run it?**:
+### **How to test it locally?**:
