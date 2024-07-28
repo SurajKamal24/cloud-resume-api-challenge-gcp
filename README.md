@@ -1,4 +1,4 @@
-# GCP Cloud Resume API
+## Overview
 This repository contains the resources for my submission to the Cloud Resume API Challenge using GCP as the cloud service provider. The challenge involves building a serverless function that fetches resume data stored in a NoSQL database and returns it in JSON format. Additionally, it integrates GitHub Actions to automatically deploy updates to your cloud serverless function whenever you push to your repository.
 
 ## High-Level Design
