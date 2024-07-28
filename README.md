@@ -63,5 +63,14 @@ This design leverages the power of Google Cloud Platform services to manage API 
 5. **Load Data into Firestore**.
    - Create a new collection in Firestore and add the resume data in JSON format.
    - Refer schema in `resume.json` for the resume data structure.
+6. **Create a Cloud Function**.
+   - Write the cloud function code to fetch data from Firestore and return it in JSON format. Refer this repository for sample code `src/main/java/demo/GetResumeData.java`.
+7. **Set up GitHub actions**.
+   - Create a new repository in GitHub and add the cloud function code.
+   - Create a new GitHub Actions workflow to deploy the cloud function whenever changes are pushed to the repository. Refer this repository for sample workflow `.github/workflows/deploy.yml`.
+   - You will need to add the following secrets to your repository:
+     - `GCP_PROJECT_ID`: The ID of your GCP project.
+     - `GCP_REGION`: The region where you want to deploy the cloud function.
+     - `GCP_SA_KEY`: The service account key for the `github-actions` service account.
 ### **How to run it?**:
 ### **How to test it locally?**:
