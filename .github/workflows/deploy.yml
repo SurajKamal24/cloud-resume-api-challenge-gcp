@@ -39,7 +39,7 @@ jobs:
             --entry-point demo.GetResumeData \
             --runtime java11 \
             --trigger-http \
-            --allow-unauthenticated \
+            --no-allow-unauthenticated \
             --region asia-south1 \
             --project precise-tube-429809-s4 \
             --memory 512MB \
