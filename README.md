@@ -126,3 +126,18 @@ The quota policy is set to 10 requests per minute in the Apigee proxy. If the qu
      gcloud config set run/region <REGION>
      ```
 2. **Run the cloud function locally**.
+  - Add the dependencies in the `pom.xml` file.
+    ```xml
+    <dependency>
+        <groupId>com.google.cloud.functions.invoker</groupId>
+        <artifactId>java-function-invoker</artifactId>
+        <version>1.0.0</version>
+    </dependency>
+    ```
+  - Create a Main function and add the following code to invoke the cloud function.
+    ```
+    Invoker.main(new String[] {
+                "--target", "demo.GetResumeData",
+                "--port", "8081"
+        });
+    ```
