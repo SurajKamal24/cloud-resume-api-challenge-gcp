@@ -135,7 +135,7 @@ The quota policy is set to 10 requests per minute in the Apigee proxy. If the qu
         <version>1.0.0</version>
     </dependency>
     ```
-  - Create a Main function and add the following code to invoke the cloud function.
+  - Create a Main function and add the following code to invoke the cloud function. Change the `--target` and `--port` values as per your cloud function.
     ```
     Invoker.main(new String[] {
                 "--target", "demo.GetResumeData",
