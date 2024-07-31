@@ -147,3 +147,6 @@ The quota policy is set to 10 requests per minute in the Apigee proxy. If the qu
 2. **Monitoring & Logging**: Set up monitoring and logging for the cloud function to track usage, performance, and errors.
 3. **Extend the cloud function functionality**: Add more features to the cloud function, such as filtering data based on user input, adding search functionality, etc.
 4. **AI/ML Integration**: Integrate AI/ML models to analyze the resume data and provide insights to the users.
+
+## Blog Post
+[My Blog](https://dev.to/surajkamal24/dive-into-the-world-of-serverless-gcp-edition-3boj)
